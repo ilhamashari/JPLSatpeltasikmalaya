@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coordinate Mapping Website</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1><i class="fas fa-map-marker-alt"></i> Coordinate Mapping</h1>
+            <p>Interactive map for viewing and managing coordinates</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Control Panel -->
+            <div class="control-panel">
+                <div class="search-section">
+                    <h3><i class="fas fa-search"></i> Search Location</h3>
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Enter location name...">
+                        <button id="searchBtn"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+
+                <div class="coordinate-section">
+                    <h3><i class="fas fa-crosshairs"></i> Coordinates</h3>
+                    <div class="coordinate-inputs">
+                        <div class="input-group">
+                            <label for="latInput">Latitude:</label>
+                            <input type="number" id="latInput" step="any" placeholder="Enter latitude">
+                        </div>
+                        <div class="input-group">
+                            <label for="lngInput">Longitude:</label>
+                            <input type="number" id="lngInput" step="any" placeholder="Enter longitude">
+                        </div>
+                        <button id="goToCoordBtn"><i class="fas fa-location-arrow"></i> Go to Coordinates</button>
+                    </div>
+                </div>
+
+                <div class="marker-section">
+                    <h3><i class="fas fa-map-pin"></i> Add Marker</h3>
+                    <div class="marker-inputs">
+                        <input type="text" id="markerTitle" placeholder="Marker title">
+                        <textarea id="markerDescription" placeholder="Marker description"></textarea>
+                        <button id="addMarkerBtn"><i class="fas fa-plus"></i> Add Marker</button>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3><i class="fas fa-info-circle"></i> Current Position</h3>
+                    <div id="currentPosition">
+                        <p>Click on the map to get coordinates</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Container -->
+            <div class="map-container">
+                <div id="map"></div>
+                <div class="map-controls">
+                    <button id="getLocationBtn" title="Get My Location">
+                        <i class="fas fa-location-crosshairs"></i>
+                    </button>
+                    <button id="clearMarkersBtn" title="Clear All Markers">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                    <button id="fullscreenBtn" title="Toggle Fullscreen">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Coordinate Mapping Website. Built with Leaflet.js</p>
+        </footer>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html> 
